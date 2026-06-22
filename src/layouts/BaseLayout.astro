@@ -8,6 +8,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
 ---
 
 <!DOCTYPE html>
@@ -21,6 +22,13 @@ const base = import.meta.env.BASE_URL;
     <link href={`${base}/pagefind/pagefind-component-ui.css`} rel="stylesheet" />
     <script src={`${base}/pagefind/pagefind-component-ui.js`} type="module"></script>
     <title>{title}</title>
+    {goatcounterCode && (
+      <script
+        data-goatcounter={`https://${goatcounterCode}.goatcounter.com/count`}
+        async
+        src="//gc.zgo.at/count.js"
+      ></script>
+    )}
   </head>
   <body class="bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
     <header class="border-b border-neutral-200 dark:border-neutral-700 p-4">
