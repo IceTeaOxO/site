@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="文章" description="所有文章列表">
+  <h1 class="text-2xl font-bold mb-4">文章</h1>
+  <ul class="space-y-4">
+    {posts.map((post) => (
+      <li>
+        <a href={`${base}/blog/${post.id}/`} class="text-lg font-medium underline">
+          {post.data.title}
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400">{post.data.description}</p>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
