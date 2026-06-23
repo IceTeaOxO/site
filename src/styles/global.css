@@ -1,27 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --pf-text: #171717;
-  --pf-text-secondary: #525252;
-  --pf-text-muted: #737373;
-  --pf-background: #ffffff;
-  --pf-border: #e5e5e5;
-  --pf-border-focus: #a3a3a3;
-  --pf-outline-focus: #171717;
-  --pf-hover: #f5f5f5;
-  --pf-mark: #e5e5e5;
+  --bg-gradient: linear-gradient(180deg, #cfe8ff 0%, #eef6ff 45%, #fbfdff 100%);
+  --text-primary: #1e2a3a;
+  --text-secondary: #4d6075;
+  --accent-start: #2f6fa5;
+  --accent-end: #e8a23a;
+  --accent: #2f6fa5;
+  --border-color: rgba(60, 90, 130, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.6);
+
+  --pf-text: #1e2a3a;
+  --pf-text-secondary: #4d6075;
+  --pf-text-muted: #7d8fa3;
+  --pf-background: #fbfdff;
+  --pf-border: #d7e6f5;
+  --pf-border-focus: #2f6fa5;
+  --pf-outline-focus: #2f6fa5;
+  --pf-hover: #eef6ff;
+  --pf-mark: #ffe6b3;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --pf-text: #f5f5f5;
-    --pf-text-secondary: #a3a3a3;
-    --pf-text-muted: #737373;
-    --pf-background: #171717;
-    --pf-border: #404040;
-    --pf-border-focus: #737373;
-    --pf-outline-focus: #f5f5f5;
-    --pf-hover: #262626;
-    --pf-mark: #404040;
+    --bg-gradient: radial-gradient(ellipse 90% 60% at 50% -15%, #2a1f4d 0%, #0c0a1e 55%, #060512 100%);
+    --text-primary: #f0eefb;
+    --text-secondary: #bdb6e0;
+    --accent-start: #c9b8ff;
+    --accent-end: #8fd8ff;
+    --accent: #8fd8ff;
+    --border-color: rgba(140, 130, 200, 0.18);
+    --card-bg: rgba(255, 255, 255, 0.035);
+
+    --pf-text: #f0eefb;
+    --pf-text-secondary: #bdb6e0;
+    --pf-text-muted: #766fa0;
+    --pf-background: #0c0a1e;
+    --pf-border: #2c2657;
+    --pf-border-focus: #8fd8ff;
+    --pf-outline-focus: #8fd8ff;
+    --pf-hover: #171340;
+    --pf-mark: #3a3470;
   }
 }
