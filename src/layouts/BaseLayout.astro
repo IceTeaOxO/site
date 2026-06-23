@@ -37,6 +37,7 @@ const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
         <a href={`${base}/blog/`}>文章</a>
         <pagefind-modal-trigger>搜尋</pagefind-modal-trigger>
       </nav>
+      <pagefind-config bundle-path={`${base}/pagefind/`} base-url={`${base}/`}></pagefind-config>
       <pagefind-modal></pagefind-modal>
     </header>
     <main class="p-4" data-pagefind-body>
