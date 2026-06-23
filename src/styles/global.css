@@ -147,3 +147,90 @@ body.site-bg > * {
 .hero .links a:hover {
   text-decoration: underline;
 }
+
+.section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 44px 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.section h2::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.post-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  list-style: none;
+}
+
+.post-row + .post-row {
+  border-top: 1px solid var(--border-color);
+}
+
+.post-row a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.post-row a:hover {
+  text-decoration: underline;
+}
+
+.post-row .post-date {
+  color: var(--text-secondary);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.post-row .post-desc {
+  flex-basis: 100%;
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.project-card {
+  list-style: none;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.project-card .project-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.project-card .project-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

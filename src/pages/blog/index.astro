@@ -9,15 +9,18 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="文章" description="所有文章列表">
-  <h1 class="text-2xl font-bold mb-4">文章</h1>
-  <ul class="space-y-4">
-    {posts.map((post) => (
-      <li>
-        <a href={`${base}/blog/${post.id}/`} class="text-lg font-medium underline">
-          {post.data.title}
-        </a>
-        <p class="text-neutral-600 dark:text-neutral-400">{post.data.description}</p>
-      </li>
-    ))}
-  </ul>
+  <section class="section">
+    <h2>文章</h2>
+    <ul>
+      {posts.map((post) => (
+        <li class="post-row">
+          <a href={`${base}/blog/${post.id}/`}>{post.data.title}</a>
+          <span class="post-date">
+            {post.data.pubDate.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit' })}
+          </span>
+          <p class="post-desc">{post.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
 </BaseLayout>

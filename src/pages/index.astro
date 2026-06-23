@@ -19,24 +19,27 @@ const base = import.meta.env.BASE_URL;
     </ul>
   </section>
 
-  <section id="latest-posts" class="mb-8">
-    <h2 class="text-xl font-bold mb-2">最新文章</h2>
-    <ul class="space-y-2">
+  <section id="latest-posts" class="section">
+    <h2>最新文章</h2>
+    <ul>
       {latestPosts.map((post) => (
-        <li>
-          <a href={`${base}/blog/${post.id}/`} class="underline">{post.data.title}</a>
+        <li class="post-row">
+          <a href={`${base}/blog/${post.id}/`}>{post.data.title}</a>
+          <span class="post-date">
+            {post.data.pubDate.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit' })}
+          </span>
         </li>
       ))}
     </ul>
   </section>
 
-  <section id="projects" class="mb-8">
-    <h2 class="text-xl font-bold mb-2">專案</h2>
-    <ul class="space-y-2">
+  <section id="projects" class="section">
+    <h2>專案</h2>
+    <ul class="space-y-3">
       {projects.map((project) => (
-        <li>
-          <a href={project.url} class="underline font-medium">{project.name}</a>
-          <p class="text-neutral-600 dark:text-neutral-400">{project.description}</p>
+        <li class="project-card">
+          <a class="project-name" href={project.url}>{project.name}</a>
+          <p class="project-desc">{project.description}</p>
         </li>
       ))}
     </ul>
