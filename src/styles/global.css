@@ -234,3 +234,80 @@ body.site-bg > * {
   line-height: 1.6;
   margin: 0;
 }
+
+.article-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 44px 16px 72px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+
+.article-content h1 {
+  font-size: clamp(28px, 6vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+
+.article-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 40px 0 16px;
+}
+
+.article-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 32px 0 12px;
+}
+
+.article-content p {
+  margin: 0 0 20px;
+}
+
+.article-content a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 0 0 20px;
+  padding-left: 1.4em;
+}
+
+.article-content li {
+  margin: 0 0 8px;
+}
+
+.article-content code {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9em;
+}
+
+.article-content pre {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 0 0 20px;
+}
+
+.article-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.article-content blockquote {
+  margin: 0 0 20px;
+  padding-left: 16px;
+  border-left: 3px solid var(--border-color);
+  color: var(--text-secondary);
+}
