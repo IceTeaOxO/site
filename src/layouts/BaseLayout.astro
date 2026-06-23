@@ -30,9 +30,9 @@ const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
       ></script>
     )}
   </head>
-  <body class="bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
-    <header class="border-b border-neutral-200 dark:border-neutral-700 p-4">
-      <nav class="flex gap-4">
+  <body class="site-bg">
+    <header>
+      <nav class="site-nav">
         <a href={`${base}/`}>首頁</a>
         <a href={`${base}/blog/`}>文章</a>
         <pagefind-modal-trigger>搜尋</pagefind-modal-trigger>
@@ -40,7 +40,7 @@ const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
       <pagefind-config bundle-path={`${base}/pagefind/`} base-url={`${base}/`}></pagefind-config>
       <pagefind-modal></pagefind-modal>
     </header>
-    <main class="p-4" data-pagefind-body>
+    <main data-pagefind-body>
       <slot />
     </main>
   </body>
