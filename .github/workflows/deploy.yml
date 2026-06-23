@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@v6
       - name: Install, build, and upload your site output
         uses: withastro/action@v6
+        env:
+          PUBLIC_GOATCOUNTER_CODE: ${{ vars.PUBLIC_GOATCOUNTER_CODE }}
 
   deploy:
     needs: build
