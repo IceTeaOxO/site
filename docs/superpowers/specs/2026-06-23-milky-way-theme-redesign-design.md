@@ -31,7 +31,7 @@
 
 - 內容欄置中，`max-width: 680px`
 - nav：上下 padding `28px`
-- hero 區塊：padding `56px 0 72px`（上 56、下 72），標題字級用 `clamp()` 做流體縮放，桌面約 `46px`，小螢幕自動縮小（建議 `clamp(32px, 8vw, 46px)`）
+- hero 區塊：padding `56px 16px 72px`（上 56、左右 16、下 72，左右留手機邊距，跟 nav/section/article-content 一致），標題字級用 `clamp()` 做流體縮放，桌面約 `46px`，小螢幕自動縮小（建議 `clamp(32px, 8vw, 46px)`）
 - 內容 section（最新文章／專案）：上下 padding `44px`，section 標題為大寫字母間距 `.1em`、字級 `13px`，前面加一個 `6px` 圓點＋光暈（`box-shadow`）作為視覺錨點，顏色用該模式的強調色
 - 文章列表 row：上下 padding `16px`，用上邊框分隔（非第一個 row 才加邊框）
 - 專案卡片：padding `18px 20px`，`border-radius: 12px`，用 1px 邊框＋極淡背景色，不用整圈陰影

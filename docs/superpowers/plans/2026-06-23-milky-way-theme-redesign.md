@@ -15,7 +15,7 @@
 - No manual dark/light toggle — `prefers-color-scheme` only.
 - No mobile hamburger menu — nav stays a plain flex row at all widths.
 - System font stack only (`-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`) — no web fonts.
-- Exact spacing/color values must match the spec's pinned `day-night` mockup numbers (max-width 680px; nav padding 28px; hero padding `56px 0 72px`; h1 `clamp(32px, 8vw, 46px)`; section padding 44px; post-row padding 16px; project card padding `18px 20px`, `border-radius: 12px`) — do not use the earlier `layout-v2` mockup's numbers.
+- Exact spacing/color values must match the spec's pinned `day-night` mockup numbers (max-width 680px; nav padding 28px; hero padding `56px 16px 72px`; h1 `clamp(32px, 8vw, 46px)`; section padding 44px; post-row padding 16px; project card padding `18px 20px`, `border-radius: 12px`) — do not use the earlier `layout-v2` mockup's numbers.
 - Spec source of truth: `docs/superpowers/specs/2026-06-23-milky-way-theme-redesign-design.md`.
 
 ---
