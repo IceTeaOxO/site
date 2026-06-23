@@ -22,7 +22,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg-gradient: radial-gradient(ellipse 90% 60% at 50% -15%, #2a1f4d 0%, #0c0a1e 55%, #060512 100%);
     --text-primary: #f0eefb;
     --text-secondary: #bdb6e0;
@@ -42,6 +42,27 @@
     --pf-hover: #171340;
     --pf-mark: #3a3470;
   }
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient: radial-gradient(ellipse 90% 60% at 50% -15%, #2a1f4d 0%, #0c0a1e 55%, #060512 100%);
+  --text-primary: #f0eefb;
+  --text-secondary: #bdb6e0;
+  --accent-start: #c9b8ff;
+  --accent-end: #8fd8ff;
+  --accent: #8fd8ff;
+  --border-color: rgba(140, 130, 200, 0.18);
+  --card-bg: rgba(255, 255, 255, 0.035);
+
+  --pf-text: #f0eefb;
+  --pf-text-secondary: #bdb6e0;
+  --pf-text-muted: #766fa0;
+  --pf-background: #0c0a1e;
+  --pf-border: #2c2657;
+  --pf-border-focus: #8fd8ff;
+  --pf-outline-focus: #8fd8ff;
+  --pf-hover: #171340;
+  --pf-mark: #3a3470;
 }
 
 body.site-bg {
@@ -66,7 +87,7 @@ body.site-bg::before {
 }
 
 @media (prefers-color-scheme: dark) {
-  body.site-bg::before {
+  :root:not([data-theme]) body.site-bg::before {
     background-image:
       radial-gradient(1.5px 1.5px at 8% 12%, rgba(255, 255, 255, 0.9), transparent),
       radial-gradient(1px 1px at 22% 28%, rgba(255, 255, 255, 0.6), transparent),
@@ -77,6 +98,18 @@ body.site-bg::before {
       radial-gradient(2px 2px at 92% 10%, rgba(255, 255, 255, 0.8), transparent);
     opacity: 0.8;
   }
+}
+
+:root[data-theme="dark"] body.site-bg::before {
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 12%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 22% 28%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 38% 8%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 55% 18%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 70% 6%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 85% 22%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(2px 2px at 92% 10%, rgba(255, 255, 255, 0.8), transparent);
+  opacity: 0.8;
 }
 
 body.site-bg > * {
@@ -103,6 +136,45 @@ body.site-bg > * {
 
 .site-nav > *:hover {
   color: var(--text-primary);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+}
+
+.theme-toggle .icon-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle .icon-light {
+    display: none;
+  }
+
+  :root:not([data-theme]) .theme-toggle .icon-dark {
+    display: inline;
+  }
+}
+
+:root[data-theme="light"] .theme-toggle .icon-light {
+  display: inline;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-dark {
+  display: inline;
 }
 
 .hero {

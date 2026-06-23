@@ -15,6 +15,16 @@ const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
 <html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
+    <script is:inline>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.dataset.theme = theme;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -36,10 +46,32 @@ const goatcounterCode = import.meta.env.PUBLIC_GOATCOUNTER_CODE;
         <a href={`${base}/`}>首頁</a>
         <a href={`${base}/blog/`}>文章</a>
         <pagefind-modal-trigger>搜尋</pagefind-modal-trigger>
+        <button class="theme-toggle" type="button" aria-label="切換淺色／深色模式">
+          <span class="icon-light" aria-hidden="true">☀</span>
+          <span class="icon-dark" aria-hidden="true">☾</span>
+        </button>
       </nav>
       <pagefind-config bundle-path={`${base}/pagefind/`} base-url={`${base}/`}></pagefind-config>
       <pagefind-modal></pagefind-modal>
     </header>
+    <script is:inline>
+      (function () {
+        var btn = document.querySelector('.theme-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var root = document.documentElement;
+          var current = root.dataset.theme;
+          if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          var next = current === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+      })();
+    </script>
     <main data-pagefind-body>
       <slot />
     </main>
