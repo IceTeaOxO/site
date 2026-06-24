@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # superpowers brainstorming companion
 .superpowers/
+
+# Obsidian vault config (if vault is rooted inside this repo)
+.obsidian/
